@@ -8,7 +8,7 @@ const paymentRoutes = require('./routes/payment');
 const app = express();
 require('dotenv').config();
 
-app.use(cors({ origin: 'http://localhost:3000' })); 
+app.use(cors({ origin: 'https://frontend-e-store.vercel.app/' })); 
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve uploads folder
 
