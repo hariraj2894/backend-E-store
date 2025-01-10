@@ -1,7 +1,7 @@
 const Product = require('../model/products');
 const jwt = require('jsonwebtoken');
 const User = require('../model/users');
-const Cart = require('../model/cart'); // Ensure you have the Cart model
+const Cart = require('../model/Cart'); // Ensure you have the Cart model
 require('dotenv').config();
 const Wish = require('../model/Wish'); // Ensure you have the Wish model
 const Order = require('../model/Orders'); // Ensure you have the Order model
