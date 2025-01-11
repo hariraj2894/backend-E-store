@@ -8,7 +8,20 @@ const paymentRoutes = require('./routes/payment');
 const app = express();
 require('dotenv').config();
 
-app.use(cors({ origin: 'https://frontend-e-store-hvngd9a03-hariraj2894s-projects.vercel.app/' })); 
+// app.use(cors({ origin: 'https://estorez.netlify.app/' })); 
+const allowedOrigins =['https://estorez.netlify.app/'];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+}));
+
+app.options('*', cors());
+
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve uploads folder
 
